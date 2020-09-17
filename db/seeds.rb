@@ -7,7 +7,7 @@ require "faker"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Review.destroy_all
 DateIdea.destroy_all
 User.destroy_all
 @user = User.new(username: "test", email: "test@gmail.com", age: 25, password: "abcdefgh")
@@ -26,10 +26,10 @@ end
   DateIdea.create!(title: Faker::Restaurant.name, user: @user)
 end
 
-@review = Review.new(title: Faker::Restaurant.review, user: @user, date_idea: @date_idea)
+@review = Review.new(content: Faker::Restaurant.review, user: @user, date_idea: @date_idea)
 
 300.times do
   @user = User.all.sample
   @date_idea = DateIdea.all.sample 
-  Review.create!(title: Faker::Restaurant.review, user: @user)
+  Review.create!(content: Faker::Restaurant.review, user: @user, date_idea: @date_idea)
 end
