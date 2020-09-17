@@ -129,7 +129,7 @@ src
 
 #### ERD Model
 
-![https://github.com/kaisha2004/Dating-Shouldnt-Suck/blob/master/Screen%20Shot%202020-09-15%20at%209.59.45%20AM.png](https://github.com/kaisha2004/Dating-Shouldnt-Suck/blob/master/Screen%20Shot%202020-09-15%20at%209.59.45%20AM.png)
+![https://github.com/kaisha2004/Dates-Shouldnt-Suck/blob/master/Screen%20Shot%202020-09-16%20at%205.12.04%20PM.png](https://github.com/kaisha2004/Dates-Shouldnt-Suck/blob/master/Screen%20Shot%202020-09-16%20at%205.12.04%20PM.png)
 
 <br>
 
