@@ -19,7 +19,7 @@ function Login() {
         <label>Password:
           <input />
         </label>
-        <Link to='/register'>Register</Link>
+        {/* <Link to='/register'>Register</Link> */}
         <button>Submit</button>
       </form>
       
