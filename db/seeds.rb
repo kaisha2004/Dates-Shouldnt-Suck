@@ -19,11 +19,11 @@ end
   User.create!(username: Faker::Internet.username, email: Faker::Internet.email, age: Faker::Number.within(range: 18..50), password: Faker::Internet.password(min_length: 6))
 end
 
-@date_idea = DateIdea.new(title: Faker::Restaurant.name, user: @user)
+@date_idea = DateIdea.new(title: Faker::Restaurant.name, price_exp: Faker::Number.within(range: 1..3), city: Faker::Address.city, user: @user)
 
 100.times do
   @user = User.all.sample 
-  DateIdea.create!(title: Faker::Restaurant.name, user: @user)
+  DateIdea.create!(title: Faker::Restaurant.name, price_exp: Faker::Number.within(range: 1..3), city: Faker::Address.city, user: @user)
 end
 
 @review = Review.new(content: Faker::Restaurant.review, user: @user, date_idea: @date_idea)
