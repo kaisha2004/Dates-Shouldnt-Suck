@@ -6,7 +6,8 @@ function Nav() {
   return (
   <nav>
     <h1>Dating Shouldn't Suck</h1>
-    <NavLink className="write" to="/createidea">Write A Review</NavLink>
+    <NavLink className="write" to="/">Home</NavLink>
+    <NavLink className="write" to="/login">Write A Review</NavLink>
 
   </nav>
   )
