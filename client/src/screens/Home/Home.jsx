@@ -10,13 +10,14 @@ function Home() {
   
 
   return (
+    <div className='background1'>
     <Layout>
-    <>
         <h1 className='title'>DATING SHOULDN'T SUCK</h1>
       <Search/>
 
-</>
+
 </Layout>
+</div>
  )
 }
 
