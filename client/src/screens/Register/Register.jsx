@@ -1,13 +1,16 @@
-import React, { useState } from "react"
-import "./Login.css"
-import { NavLink, Link } from "react-router-dom"
+import React, { useState } from 'react'
+import { NavLink } from "react-router-dom"
 
-function Login(props) {
+export default function Register(props) {
+  
   const [formData, setFormData] = useState({
     username: "",
+    age:0,
+    email: "",
     password: "",
+
   })
-  const { username, password } = formData
+  const { username, age, email, password } = formData
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -21,11 +24,11 @@ function Login(props) {
       <NavLink className="write" to="/">
         Home
       </NavLink>
-      <h1>Please Login</h1>
+      <h1>Please Sign-Up</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          props.loginSubmit(formData)
+          props.registerSubmit(formData)
         }}
       >
         <label>
@@ -34,6 +37,26 @@ function Login(props) {
             type="text"
             name="username"
             value={username}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Age:
+          <input
+            type='integer'
+            name="age"
+            value={age}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input
+            type="text"
+            name="email"
+            value={email}
             onChange={handleChange}
           />
         </label>
@@ -48,10 +71,9 @@ function Login(props) {
           />
         </label>
         <br />
-        <Link to="/register">Register</Link>
-        <button>Login</button>
+        <button>Register</button>
       </form>
     </div>
   )
+  
 }
-export default Login
