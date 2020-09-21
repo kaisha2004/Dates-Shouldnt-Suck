@@ -24,7 +24,7 @@ function MainContainer(props) {
   return (
     <Switch>
       <Route path="/dateideas">
-        <Date_Ideas dateIdeas={dateIdeas} />
+        <Date_Ideas currentUser = {props.currentUser} />
       </Route>
       <Route path="/">
         <Home />

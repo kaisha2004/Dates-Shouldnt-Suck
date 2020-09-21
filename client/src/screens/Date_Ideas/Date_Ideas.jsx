@@ -20,6 +20,12 @@ function Date_Ideas(props) {
       }, [newIdea]) 
 
  
+  const renderEdit = (date_idea) => {
+    if (props.currentUser && props.currentUser.id === date_idea.user_id) {
+        return <Link to={`/dateideas/edit/${date_idea.id}`}><button>Edit</button></Link>
+      }
+  }
+  
   return (
     <div>
     
@@ -28,21 +34,20 @@ function Date_Ideas(props) {
         <img src={`${date_idea.img_url}`} className='idea_pics'/>
           <h1>{date_idea.title}</h1>
           <h2>{date_idea.city} </h2>
+          <h2>{date_idea.user.username}</h2>
           <h2>{date_idea.category}</h2>
-          <Link to={`/dateideas/edit/${date_idea.id}`}>
-        <button>Edit</button>
-      </Link>
+           {renderEdit(date_idea)}
 
      </div>
       ))}
-       <Switch>
+       {/* <Switch>
       <Route path="/createidea">
       <Create 
         setNewIdea={setNewIdea}
         newIdea={newIdea}
           />
         </Route>
-        </Switch>
+        </Switch> */}
     </div>
   )
 }

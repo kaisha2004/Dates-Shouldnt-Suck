@@ -9,7 +9,7 @@ function Nav(props) {
   <nav>
       <h1>Dates Shouldn't Suck in NYC</h1>
       <NavLink className="write" to="/dateideas">Home</NavLink>
-      <NavLink className="write" to="/login">Write A Review</NavLink>
+      <NavLink className="write" to="/createidea">Submit A Date Idea</NavLink>
       {/* {
         currentUser ? 
           <div>

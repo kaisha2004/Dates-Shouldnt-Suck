@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea } from '../../services/date_ideas';
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 
 function Create(props) {
@@ -8,24 +8,28 @@ function Create(props) {
   const [city, updateCity] = useState('')
   const [category, updateCategory] = useState('')
   const [img_url, updateImgUrl] = useState('')
+  const History = useHistory()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = await postDateIdea( {
-      fields: {
+      date_idea: {
         title: title,
         city: city,
         category: category,
         img_url: img_url
       }
     })
-    props.setNewIdea(!props.newIdea)
-    updateTitle('')
-    updateCity('')
-    updateCategory('')
-    updateImgUrl('')
+    if (data) {
+      History.push('/dateideas')
+    }
    
   }
+
+  
+  if (!props.currentUser) {
+     History.push('/login')
+   }
 
   return (
    
@@ -39,9 +43,8 @@ function Create(props) {
       <input type="text" id="Category" onChange={e => updateCategory(e.target.value)} value={category} />
       <label htmlFor="City">City:</label>
     <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
-    <Link to="/dateideas" >
-        <button>Submit</button>
-      </Link>
+    <button>Submit</button>
+
       
   </form>
    

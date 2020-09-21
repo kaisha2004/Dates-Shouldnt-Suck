@@ -41,11 +41,13 @@ function Update(props) {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    const deleted = await deleteDateIdea(dateIdea._id);
+    const deleted = await deleteDateIdea(dateIdea.id);
     if (deleted) {
       setIsDateIdeaDeleted(!isDateIdeaDeleted);
     }
   };
+
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();

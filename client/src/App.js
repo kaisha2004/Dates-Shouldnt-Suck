@@ -41,7 +41,7 @@ function App() {
             <Update />
           </Route>
           <Route path="/createidea">
-            <Create />
+            <Create  currentUser={currentUser}/>
           </Route>
           <Route path="/login">
             <Login loginSubmit={loginSubmit} />
@@ -50,7 +50,9 @@ function App() {
             <Register registerSubmit={registerSubmit} />
           </Route>
           <Route path="/">
-            <MainContainer />
+            <MainContainer
+              currentUser={currentUser}
+            />
           </Route>
         </Switch>
       </Layout>
