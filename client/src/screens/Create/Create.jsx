@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea } from '../../services/date_ideas';
+import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea, addReview } from '../../services/date_ideas';
 import { Link, useHistory } from "react-router-dom"
 
 

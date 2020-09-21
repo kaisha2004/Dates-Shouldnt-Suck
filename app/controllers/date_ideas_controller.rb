@@ -1,14 +1,14 @@
 class DateIdeasController < ApplicationController
-  before_action :set_date_idea, only:  [:update]
   before_action :authorize_request, only: [ :create, :update, :destroy]
-
+  before_action :set_date_idea, only:  [:update]
+ 
   # one of the routes have to give unauthorized users access...is my line #3 index route is exposed
 
   # GET /date_ideas
   def index
     @date_ideas = DateIdea.all
 
-    render json: @date_ideas
+    render json: @date_ideas, include: [:user, :reviews]
   end
 
   # GET /date_ideas/1
@@ -38,6 +38,17 @@ class DateIdeasController < ApplicationController
     end
   end
 
+    # DELETE /date_ideas/1
+    def destroy
+      @date_idea= DateIdea.find(params[:id])
+      if  @date_idea.destroy 
+        render json: {message: "Deleted"}
+      else 
+        render json: @date_idea.errors, status: :unprocessable_entity
+      end
+
+    end
+
  
 
   private
@@ -48,6 +59,6 @@ class DateIdeasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def date_idea_params
-      params.require(:date_idea).permit(:title, :price_exp)
+      params.require(:date_idea).permit(:title, :img_url, :category, :city)
     end
 end

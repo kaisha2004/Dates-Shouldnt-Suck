@@ -36,7 +36,10 @@ function Date_Ideas(props) {
           <h2>{date_idea.city} </h2>
           <h2>{date_idea.user.username}</h2>
           <h2>{date_idea.category}</h2>
-           {renderEdit(date_idea)}
+          {renderEdit(date_idea)}
+          {date_idea.reviews.map(review => (
+            <p>{review.content}</p>
+          ))}
 
      </div>
       ))}

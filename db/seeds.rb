@@ -10,24 +10,40 @@ require "faker"
 Review.destroy_all
 DateIdea.destroy_all
 User.destroy_all
-@user1 = User.create!(username: "test", email: "test@gmail.com", age: 25, password: "abcdefgh")
+@user1 = User.create!(username: "michelle", email: "test@gmail.com", age: 25, password: "abcdefgh")
 @user2 = User.create!(username: "ryan", email: "ryan@gmail.com", age: 29, password: "abcdefgh")
 @user3 = User.create!(username: "clarissa", email: "clarissa@gmail.com", age: 36, password: "abcdefgh")
 @user4 = User.create!(username: "tom", email: "tom@gmail.com", age: 41, password: "abcdefgh")
 @user5 = User.create!(username: "betsy", email: "betsy@gmail.com", age: 22, password: "abcdefgh")
 puts "5 users created"
 
-@date_idea1 = DateIdea.create!(title: "Governor's Island", price_exp: 1, city: "New York City", category: "bike trails", img_url: "https://www.blazingsaddles.com/sites/default/files/styles/header_slideshow/public/header-images/2019-06/Blazing%20Saddles%20by%20Jinnifer%20Douglass%20135%20%281%29.jpg?h=7d1b7995&itok=NKMSgmJU", user: @user1)
-@date_idea2 = DateIdea.create!(title: "Central Park", price_exp: 1, city: "New York City", category: "bike trails", img_url: "https://img.grouponcdn.com/deal/3YNKdh87oEnvzHjHHwHviGLqyytd/3Y-2100x1400/v1/c700x420.jpg", user: @user2)
-@date_idea3 = DateIdea.create!(title: "East River", price_exp: 1, city: "New York City", category: "bike trails", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTL4xCDKX17kzc_VHqGhOpsjH-9-RQVHpNVFg&usqp=CAU", user: @user3)
-@date_idea4 = DateIdea.create!(title: "Abigail's Kitchen", price_exp: 3, city: "New York City", category: "cooking class", img_url: "https://images.squarespace-cdn.com/content/v1/5ca5fcc552395850e88992c6/1555366456533-SETH3DBNII0L9ZKMEU0E/ke17ZwdGBToddI8pDm48kPWm0rAlW9TKAL1D5ahVyMVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIMtibWLUI7aOimFHAlN5ME1NTm-o9_jdK7gwBeKeV1OAKMshLAGzx4R3EDFOm1kBS/ABIGAILS+KITCHEN_SPRING+2019_114_WEB.jpg", user: @user2)
-@date_idea5 = DateIdea.create!(title: "ButterLane Cupcakes", price_exp: 3, city: "New York City", category: "cooking class", img_url: "https://d3tv8y14ogpztx.cloudfront.net/pulses/images/000/031/845/wide_product/butter_lane-cupcake_girls.jpg", user: @user4)
-@date_idea6 = DateIdea.create!(title: "Pizza School NYC", price_exp: 2, city: "New York City", category: "cooking class", img_url: "https://media-cdn.tripadvisor.com/media/photo-s/11/e1/c5/08/photo1jpg.jpg", user: @user5)
+@date_idea1 = DateIdea.create!(title: "Governor's Island", price_exp: 1, city: "New York City", category: "Bike Trails", img_url: "https://www.blazingsaddles.com/sites/default/files/styles/header_slideshow/public/header-images/2019-06/Blazing%20Saddles%20by%20Jinnifer%20Douglass%20135%20%281%29.jpg?h=7d1b7995&itok=NKMSgmJU", user: @user1)
+@date_idea2 = DateIdea.create!(title: "Pier 17", price_exp: 3, city: "New York City", category: "Rooftops", img_url: "https://nypost.com/wp-content/uploads/sites/2/2020/08/rooftops-pier-17-the-greens.jpg?quality=80&strip=all&w=1024", user: @user3)
+@date_idea3 = DateIdea.create!(title: "Manhattan Kayak", price_exp: 3, city: "New York City", category: "Water Sports", img_url: "https://shipyardmarina.com/wp-content/uploads/2017/03/shipyard-marina-kayak-01.jpg", user: @user3)
+@date_idea4 = DateIdea.create!(title: "Grand Banks", price_exp: 3, city: "New York City", category: "Boat Bars", img_url: "https://wswd-wordpress-production.s3.amazonaws.com/content/uploads/2018/07/15153625/GRAND-BANKS-NYC-FB-copy-1200x630.jpg", user: @user2)
+@date_idea5 = DateIdea.create!(title: "Skyline Drive-In ", price_exp: 2, city: "Brooklyn", category: "Drive In", img_url: "https://offloadmedia.feverup.com/secretnyc.co/wp-content/uploads/2020/06/10101747/82862589_260853392003955_6490946503075211457_n-1.jpg", user: @user5)
+@date_idea6 = DateIdea.create!(title: "Pizza School NYC", price_exp: 2, city: "New York City", category: "Cooking Class", img_url: "https://media-cdn.tripadvisor.com/media/photo-s/11/e1/c5/08/photo1jpg.jpg", user: @user4)
 
   puts "6 ideas created"
 
-@review = Review.create!(content: "Had a date night at the Pizza School. It was so much fun and obviously also delicious. There were drinkers and non-drinkers, meat-eaters and vegetarians. The class was a blast for everyone. Such a great date idea to catch up with friends in a way that isn’t typical dinner/drinks.", user: @user3, date_idea: @date_idea6)
-@review = Review.create!(content: "Great experience. My girlfriend and I absolutely loved it. The class is fun as well as educational and the instructors are amazing. Highly recommend this experience for a date night or family affair.", user: @user1, date_idea: @date_idea6)
+@review = Review.create!(content: "My date and I explored the whole Island by Cycling, sitting at a Cafe sipping a Iced Passion Tea, and enjoyed seeing Jazz Age Dance Party. That was beautiful part of our trip.", user: @user5, date_idea: @date_idea1)
+@review = Review.create!(content: "Brought a date here and had an amazing time. Rented a double seated bike which has a top covering which helps in the summer times.", user: @user1, date_idea: @date_idea1)
+  
+@review = Review.create!(content: "What an amazing night at The Greens!! My husband and I spent our evening watching the sunset, drinking yummy yummy drinks (Pina Colada & The Greens cocktail), and eating good food.", user: @user3, date_idea: @date_idea2)
+@review = Review.create!(content: "Such a great spot for socially distanced dating. You can enjoy lunch or dinner here (reserve a lawn in advance) and also play games or just enjoy the scenery.", user: @user4, date_idea: @date_idea2)
+  
+  
+@review = Review.create!(content: "Had the best first time here with my fiancee! Judy and Dale were the most welcoming and helpful people I have ever met! ", user: @user2, date_idea: @date_idea3)
+@review = Review.create!(content: "Manhattan Kayak is a wonderful addition to the New York landscape.  It has been here for eight years.  I only just discovered it while out with my new BF.  Discoveries such as this, especially in these bleak times, are a total find.", user: @user5, date_idea: @date_idea3)
+  
+@review = Review.create!(content: "What a nice escape for a date night in Manhattan. Beautiful setting, great views, excellent oysters and the scallops and ceviche were amazing. Alex, our bartender, was so attentive and helpful. Definitely recommend. ", user: @user2, date_idea: @date_idea4)
+@review = Review.create!(content: "Oysters, soft shell crab and lobster roll Scenic, serene, scrumptious And lovely service too! This is a unique NYC spot!", user: @user1, date_idea: @date_idea4)
+
+@review = Review.create!(content: "This new guy I'm seeing suggested the Skyline Drive-in and we found it to be such a great and relatively safe activity during COVID times. I felt that the staff were working very hard to keep us safe and the evening running smoothly.", user: @user4, date_idea: @date_idea5)
+@review = Review.create!(content: "Since we started going here a few weeks ago, we have really enjoyed ourselves. The staff are extremely friendly, the concessions are well done, and fairly priced.", user: @user3, date_idea: @date_idea5)
+  
+@review = Review.create!(content: "Had a date night at the Pizza School. It was so much fun and obviously also delicious. There were drinkers and non-drinkers, meat-eaters and vegetarians. The class was a blast for everyone. Such a great date idea to catch up with friends in a way that isn’t typical dinner/drinks.", user: @user1, date_idea: @date_idea6)
+@review = Review.create!(content: "Great experience. My girlfriend and I absolutely loved it. The class is fun as well as educational and the instructors are amazing. Highly recommend this experience for a date night or family affair.", user: @user5, date_idea: @date_idea6)
 
 # 15.times do
 #   User.create!(username: Faker::Internet.username, email: Faker::Internet.email, age: Faker::Number.within(range: 18..50), password: Faker::Internet.password(min_length: 6))
