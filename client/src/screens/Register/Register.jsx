@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Layout from "../../components/shared/Layout/Layout"
 
 export default function Register(props) {
 
@@ -21,7 +20,6 @@ export default function Register(props) {
   }
   return (
     <div className="background2">
-      <Layout>
       <h1>Please Sign-Up</h1>
       <form
         onSubmit={(e) => {
@@ -71,7 +69,6 @@ export default function Register(props) {
         <br />
         <button>Register</button>
         </form>
-        </Layout>
     </div>
   )
   

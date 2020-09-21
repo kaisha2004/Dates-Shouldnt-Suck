@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./Login.css"
 import { Link } from "react-router-dom"
-import Layout from "../../components/shared/Layout/Layout"
+
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ function Login(props) {
   }
   return (
     <div className="background2">
-     <Layout>
+   
       <h1>Please Login</h1>
       <form
         onSubmit={(e) => {
@@ -50,7 +50,7 @@ function Login(props) {
         <Link to="/register">Register</Link>
         <button>Login</button>
         </form>
-        </Layout>
+       
     </div>
   )
 }

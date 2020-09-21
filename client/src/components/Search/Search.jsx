@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-// import MainContainer from "../../container/MainContainer"
+import MainContainer from "../../container/MainContainer"
+import Date_Ideas from "../../screens/Date_Ideas/Date_Ideas"
 
 const Search = () => {
   const [selectTerm, updateSelectTerm] = useState('')
 
   
   const handleSelect = (e) => {
-    console.log(e.target.value)
     updateSelectTerm(e.target.value)
   }
   
@@ -15,7 +15,7 @@ const Search = () => {
     <>
       <select className="ui dropdown"  onChange={handleSelect}>
         <option value=''>Select Date Idea</option>
-        <option value="Biking Trails">Biking Trails</option>
+        <option value="Bike Trails">Biking Trails</option>
         <option value='Boat Rentals'>Boat Rentals</option>
         <option value='Comedy Shows'>Comedy Shows</option>
         <option value='Cooking Class'>Cooking Class</option>
@@ -25,7 +25,7 @@ const Search = () => {
         <option value='Rooftop Bars'>Rooftop Bars</option>
       </select>
       
-      {/* <MainContainer updateSelectTerm={updateSelectTerm} /> */}
+      <Date_Ideas selectTerm={selectTerm} />
       <Link to="/dateideas" >
         <button onClick={handleSelect}>Select</button>
       </Link>

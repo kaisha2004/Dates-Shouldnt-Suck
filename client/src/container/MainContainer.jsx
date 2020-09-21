@@ -7,7 +7,9 @@ import Home from "../screens/Home/Home"
 
 function MainContainer(props) {
   const [dateIdeas, setDateIdeas] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
+  // const [searchTerm, setSearchTerm] = useState("")
+
+
 
   useEffect(() => {
   

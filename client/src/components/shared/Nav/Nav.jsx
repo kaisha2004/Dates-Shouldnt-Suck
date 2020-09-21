@@ -7,8 +7,8 @@ function Nav(props) {
   const {pathname}= useLocation()
   return (
   <nav>
-      <h1>Dating Shouldn't Suck</h1>
-      <NavLink className="write" to="/">Home</NavLink>
+      <h1>Dates Shouldn't Suck in NYC</h1>
+      <NavLink className="write" to="/dateideas">Home</NavLink>
       <NavLink className="write" to="/login">Write A Review</NavLink>
       {/* {
         currentUser ? 
