@@ -1,14 +1,22 @@
 import React from "react";
 // import "./Nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
+  const { currentUser } = props
+  const {pathname}= useLocation()
   return (
   <nav>
-    <h1>Dating Shouldn't Suck</h1>
-    <NavLink className="write" to="/">Home</NavLink>
-    <NavLink className="write" to="/login">Write A Review</NavLink>
-
+      <h1>Dating Shouldn't Suck</h1>
+      <NavLink className="write" to="/">Home</NavLink>
+      <NavLink className="write" to="/login">Write A Review</NavLink>
+      {/* {
+        currentUser ? 
+          <div>
+            <p>Hello {currentUser.username}!</p>
+            <button>Logout</button>
+          </div> : */}
+        
   </nav>
   )
 }

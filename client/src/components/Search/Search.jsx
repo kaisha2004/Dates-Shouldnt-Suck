@@ -1,40 +1,36 @@
-import React from "react"
-import { Dropdown } from 'semantic-ui-react'
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+// import MainContainer from "../../container/MainContainer"
 
 const Search = () => {
+  const [selectTerm, updateSelectTerm] = useState('')
 
-  const dateOptions = [
-    { text: 'Biking Trails' },
-    { text: 'Boat Rentals' },
-    { text: 'Comedy Shows' },
-    { text: 'Cooking Class' },
-    { text: 'Hiking Trails' },
-    { text: 'Off Off Broadway' },
-    { text: 'Outdoor Dining' },
-    { text: 'Outdoor Music' },
-    { text: 'Picnic Spots' },
-    { text: 'Pop-up Dinners' },
-    { text: 'Rock Climbing' },
-    { text: 'Rooftop Bars' },
-    { text: 'Speakeasy' },
-    { text: 'Unusual Dining' },
-    { text: 'Unusual Movies' },
-  ]
-  // const styleLink = document.createElement("link");
-  // styleLink.rel = "stylesheet";
-  // styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
-  // document.head.appendChild(styleLink);
-return (
-  <>
-   <Dropdown
-    placeholder='Select'
-    fluid
-    search
-    selection
-    options={dateOptions}
-  />
-  </>
-)
+  
+  const handleSelect = (e) => {
+    console.log(e.target.value)
+    updateSelectTerm(e.target.value)
+  }
+  
+  return (
+    <>
+      <select className="ui dropdown"  onChange={handleSelect}>
+        <option value=''>Select Date Idea</option>
+        <option value="Biking Trails">Biking Trails</option>
+        <option value='Boat Rentals'>Boat Rentals</option>
+        <option value='Comedy Shows'>Comedy Shows</option>
+        <option value='Cooking Class'>Cooking Class</option>
+        <option value='Drive-Ins'>Drive-Ins</option>
+        <option value='Outdoor Music'>Outdoor Music</option>
+        <option value='Picnic Spots'>Picnic Spots</option>
+        <option value='Rooftop Bars'>Rooftop Bars</option>
+      </select>
+      
+      {/* <MainContainer updateSelectTerm={updateSelectTerm} /> */}
+      <Link to="/dateideas" >
+        <button onClick={handleSelect}>Select</button>
+      </Link>
+    </>
+  )
 }
 
 export default Search

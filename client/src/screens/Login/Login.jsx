@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./Login.css"
-import { NavLink, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
+import Layout from "../../components/shared/Layout/Layout"
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -18,9 +19,7 @@ function Login(props) {
   }
   return (
     <div className="background2">
-      <NavLink className="write" to="/">
-        Home
-      </NavLink>
+     <Layout>
       <h1>Please Login</h1>
       <form
         onSubmit={(e) => {
@@ -50,7 +49,8 @@ function Login(props) {
         <br />
         <Link to="/register">Register</Link>
         <button>Login</button>
-      </form>
+        </form>
+        </Layout>
     </div>
   )
 }

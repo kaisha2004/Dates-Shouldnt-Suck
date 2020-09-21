@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { NavLink } from "react-router-dom"
+import React, {useState} from 'react'
+import Layout from "../../components/shared/Layout/Layout"
 
 export default function Register(props) {
-  
+
   const [formData, setFormData] = useState({
     username: "",
     age:0,
@@ -21,9 +21,7 @@ export default function Register(props) {
   }
   return (
     <div className="background2">
-      <NavLink className="write" to="/">
-        Home
-      </NavLink>
+      <Layout>
       <h1>Please Sign-Up</h1>
       <form
         onSubmit={(e) => {
@@ -72,7 +70,8 @@ export default function Register(props) {
         </label>
         <br />
         <button>Register</button>
-      </form>
+        </form>
+        </Layout>
     </div>
   )
   
