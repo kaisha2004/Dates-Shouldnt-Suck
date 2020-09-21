@@ -1,6 +1,6 @@
 class DateIdeasController < ApplicationController
   before_action :set_date_idea, only:  [:update]
-  before_action :authorize_request, only: [:index, :create, :update]
+  before_action :authorize_request, only: [ :create, :update, :destroy]
 
   # one of the routes have to give unauthorized users access...is my line #3 index route is exposed
 

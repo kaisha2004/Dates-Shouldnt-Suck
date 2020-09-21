@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_235309) do
+ActiveRecord::Schema.define(version: 2020_09_19_160940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_09_17_235309) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "city"
+    t.string "category"
+    t.string "img_url"
     t.index ["user_id"], name: "index_date_ideas_on_user_id"
   end
 
