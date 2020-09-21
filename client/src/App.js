@@ -4,6 +4,7 @@ import "./App.css"
 import Login from "./screens/Login/Login"
 import Register from "./screens/Register/Register"
 import Create from "./screens/Create/Create"
+import Update from "./screens/Update/Update"
 import Layout from "./components/shared/Layout/Layout"
 import MainContainer from "./container/MainContainer"
 import { loginUser, registerUser, verifyUser } from "./services/auth"
@@ -36,7 +37,10 @@ function App() {
     <div>
       <Layout currentUser={currentUser}>
         <Switch>
-        <Route path="/createidea">
+          <Route path="/dateideas/edit/:id" exact>
+            <Update />
+          </Route>
+          <Route path="/createidea">
             <Create />
           </Route>
           <Route path="/login">

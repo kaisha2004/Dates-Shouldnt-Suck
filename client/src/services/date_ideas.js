@@ -1,32 +1,51 @@
-import api from './api-config'
+import api from "./api-config"
 
 export const getAllDateIdeas = async () => {
-  const resp = await api.get('/date_ideas');
-  return resp.data;
+  const resp = await api.get("/date_ideas")
+  return resp.data
 }
 
 export const getOneDateIdea = async (id) => {
-  const resp = await api.get(`/date_ideas/${id}`);
-  return resp.data;
+  const resp = await api.get(`/date_ideas/${id}`)
+  return resp.data
 }
 
 export const putDateIdea = async (id, formData) => {
-  const resp = await api.put(`/date_ideas/${id}`, { dateIdea: formData })
-  return resp.data;
+  const resp = await api.put(`/date_ideas/${id}`, formData)
+  return resp.data
 }
 
 export const postDateIdea = async (formData) => {
-  const resp = await api.post('/date_ideas', { dateIdea: formData })
-  return resp.data;
+  const resp = await api.post("/date_ideas", formData)
+  return resp.data
 }
 
 export const deleteDateIdea = async (id) => {
   const resp = await api.delete(`/date_ideas/${id}`)
-  return resp.data;
+  return resp.data
 }
 
 export const getAllUsers = async () => {
-  const resp = await api.get('/users');
-  return resp.data;
+  const resp = await api.get("/users")
+  return resp.data
 }
 
+export const getAllReviews = async () => {
+  const resp = await api.get("/reviews")
+  return resp.data
+}
+
+export const getOneReview = async (id) => {
+  const resp = await api.get(`/reviews/${id}`)
+  return resp.data
+}
+
+export const putReview = async (id, formData) => {
+  const resp = await api.put(`/reviews/${id}`, { review: formData })
+  return resp.data
+}
+
+export const postReview = async (formData) => {
+  const resp = await api.post("/reviews", { review: formData })
+  return resp.data
+}

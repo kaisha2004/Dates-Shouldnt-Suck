@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea} from '../../services/date_ideas';
+import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea } from '../../services/date_ideas';
+import { Link } from "react-router-dom"
 
 
 function Create(props) {
@@ -38,7 +39,10 @@ function Create(props) {
       <input type="text" id="Category" onChange={e => updateCategory(e.target.value)} value={category} />
       <label htmlFor="City">City:</label>
     <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
-    <input type="submit" value="Submit" className="create_btn"/>
+    <Link to="/dateideas" >
+        <button>Submit</button>
+      </Link>
+      
   </form>
    
   )
