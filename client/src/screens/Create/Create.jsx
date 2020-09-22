@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea, addReview } from '../../services/date_ideas';
 import { Link, useHistory } from "react-router-dom"
+import "./Create.css"
 
 
 function Create(props) {
@@ -8,6 +9,7 @@ function Create(props) {
   const [city, updateCity] = useState('')
   const [category, updateCategory] = useState('')
   const [img_url, updateImgUrl] = useState('')
+  const [review, updateReview] = useState('')
   const History = useHistory()
 
   const handleSubmit = async (e) => {
@@ -20,7 +22,14 @@ function Create(props) {
         img_url: img_url
       }
     })
-    if (data) {
+    const id = data.id
+    let reviewForm = {
+      id, 
+      content: review
+   }
+   let response = await addReview(reviewForm)
+    console.log(response)
+    if (response) {
       History.push('/dateideas')
     }
    
@@ -29,10 +38,11 @@ function Create(props) {
   
   if (!props.currentUser) {
      History.push('/login')
-   }
+  }
+  
 
   return (
-   
+   <div className="background5">
       <form onSubmit={handleSubmit}>
     <h2 className="form_title">Submit Your Date Idea!</h2>
     <label htmlFor="Image">Image:</label>
@@ -42,12 +52,14 @@ function Create(props) {
     <label htmlFor="Category">Category:</label>
       <input type="text" id="Category" onChange={e => updateCategory(e.target.value)} value={category} />
       <label htmlFor="City">City:</label>
-    <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
+        <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
+        <label htmlFor="Review">Review:</label>
+    <input type="text" id="Review" onChange={e => updateReview(e.target.value)} value={review} />
     <button>Submit</button>
 
       
   </form>
-   
+   </div>
   )
 }
 

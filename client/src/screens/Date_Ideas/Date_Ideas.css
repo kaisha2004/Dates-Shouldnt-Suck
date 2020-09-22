@@ -1,0 +1,56 @@
+/* deep red: #d62839 
+deep magenta: #ba324f
+deep teal: #175676
+light teal: #4ba3c3
+light blue : #cce6f4
+
+*/
+
+.background7 {
+  background-image: url('../../photos/date7.jpg');
+  
+  
+  
+  }
+
+.summary{
+  padding-top: 180px;
+
+}
+.datesummary {
+  display: flex;
+  margin: 0px 0px 30px 50px;
+  background-color: rgba(173,216,230,.90);
+  border-color: #175676;
+  border-style: solid;
+  border-width: 1px;
+  width: 1150px;
+
+
+}
+.idea_pics {
+ width: 30%;
+ height:auto;
+}
+.datetitle {
+  color: #ba324f;
+  margin-left: 30px;
+}
+.datecat {
+  margin-left: 30px;
+}
+.datecity {
+  margin-left: 30px;
+}
+.dateauthor {
+  margin-left: 30px;
+}
+.review {
+  margin: 0px 50px 10px 30px;
+}
+.datebtn {
+  margin-left: 30px;
+  background-color: white;
+  color: #175676;
+  width: 25%
+}

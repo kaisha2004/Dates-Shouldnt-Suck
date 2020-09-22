@@ -1,0 +1,24 @@
+/* deep red: #d62839 
+deep magenta: #ba324f
+deep teal: #175676
+light teal: #4ba3c3
+light blue : #cce6f4
+
+*/
+
+.nav{
+  background-color: #175676;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+.nav-title {
+  font-family: 'Gravitas One', cursive;
+  font-size: 2rem;
+}
+
+.write {
+  color: white;
+  margin: 30px 20px 50px 20px;
+  
+}

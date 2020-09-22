@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import "./Register.css"
 
 export default function Register(props) {
 
@@ -19,7 +20,7 @@ export default function Register(props) {
     }))
   }
   return (
-    <div className="background2">
+    <div className="background3">
       <h1>Please Sign-Up</h1>
       <form
         onSubmit={(e) => {

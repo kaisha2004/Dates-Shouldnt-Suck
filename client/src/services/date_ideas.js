@@ -30,7 +30,7 @@ export const getAllUsers = async () => {
   return resp.data
 }
 
-export const addReview = async (date_ideaId, reviewId) => {
-  const resp = await api.get(`/date_ideas/${date_ideaId}/reviews/${reviewId}`);
+export const addReview = async (formData) => {
+  const resp = await api.post(`/reviews`, formData);
   return resp.data;
 }
