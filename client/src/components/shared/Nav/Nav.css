@@ -22,3 +22,31 @@ light blue : #cce6f4
   margin: 30px 20px 50px 20px;
   
 }
+
+@media screen and (max-width: 500px) {
+  .nav {
+  background-color: black
+  }
+
+  .nav-title {
+    font-size: 15px;
+  }
+
+  .write {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width:501px) and (max-width:900px)  {
+  .nav {
+    background-color: #ba324f;
+
+    }
+    .nav-title {
+      font-size: 30px;
+    }
+
+    .write {
+      font-size: 20px;
+    }
+}
+
