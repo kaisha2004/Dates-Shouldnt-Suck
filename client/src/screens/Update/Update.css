@@ -50,7 +50,7 @@
     color: #175676;
    font-weight: bold
   }
-  input {
+  .updateinput {
     float:right;
     width: 70%;
   }

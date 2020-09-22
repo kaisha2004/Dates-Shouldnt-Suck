@@ -80,7 +80,7 @@ function Update(props) {
         <form className="edit-form">
           <label htmlFor="img_url">
             ImageURL:
-            <input
+            <input className='updateinput'
               className="edit-img-link"
               placeholder="Img Link"
               value={dateIdea.img_url}
@@ -92,7 +92,7 @@ function Update(props) {
 
           <label htmlFor="title">
             Title:
-            <input
+            <input className='updateinput'
               className="input-title"
               placeholder="Title"
               name="title"
@@ -105,7 +105,7 @@ function Update(props) {
 
           <label htmlFor="city">
             City:
-            <input
+            <input className='updateinput'
               className="input-city"
               placeholder="City Name"
               name="city"
@@ -117,7 +117,7 @@ function Update(props) {
 
           <label htmlFor="category">
             Category:
-            <input
+            <input className='updateinput'
               className="input-category"
               placeholder="Category Name"
               name="category"
