@@ -1,6 +1,6 @@
 header {
   background-color: #175676;
-  position: fixed;
+  position: absolute;
   width: 100vw;
   margin-bottom: 150px;
   padding-bottom: 25px

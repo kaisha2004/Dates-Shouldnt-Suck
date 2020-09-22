@@ -19,9 +19,10 @@ function Login(props) {
   }
   return (
     <div className="background2">
+      <div className='logincontent'>
    
-      <h1>Please Login</h1>
-      <form
+      <h1 className='logintitle'>Please Login</h1>
+      <form className='loginform'
         onSubmit={(e) => {
           e.preventDefault()
           props.loginSubmit(formData)
@@ -47,10 +48,10 @@ function Login(props) {
           />
         </label>
         <br />
-        <Link to="/register">Register</Link>
-        <button>Login</button>
+          <button>Login</button>
+          <Link to="/register">Register</Link>
         </form>
-       
+        </div>
     </div>
   )
 }
