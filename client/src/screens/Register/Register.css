@@ -2,8 +2,37 @@
   background-image: url('../../photos/date1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
   height: 100vh;
   width: 100vw
-  
   }
+
+  .regcontent {
+    padding-top: 150px;
+    width: 250px;
+  }
+
+  .regtitle{
+    color: white;
+  }
+
+
+  .regbtn {
+    width: 250px;
+    color: #175676;
+    font-weight: bold;
+    font-size: .9rem
+
+  }
+ 
+  .regform {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: bold
+  }
+
+
+  .reginput {
+  display: inline-block;
+  float: right;
+}

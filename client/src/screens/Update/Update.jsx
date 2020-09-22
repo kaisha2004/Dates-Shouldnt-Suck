@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
-import { getAllDateIdeas, putDateIdea, getOneDateIdea,postDateIdea, deleteDateIdea } from '../../services/date_ideas';
+import { getAllDateIdeas, putDateIdea, getOneDateIdea, postDateIdea, deleteDateIdea } from '../../services/date_ideas';
+import "./Update.css"
 
 function Update(props) {
   const [dateIdea, setDateIdea] = useState({
@@ -64,8 +65,9 @@ function Update(props) {
   }
 
   return (
-    <section>
-        <div className="idea-edit">
+    <section className="editsection">
+      <div className="idea-edit">
+        <h1 className="edittitle">Edit Your Post!</h1>
         <div className="img-container">
           {dateIdea.img_url.length > 0 && (
             <img

@@ -1,0 +1,56 @@
+.editsection{
+  background-image: url('../../photos/date9.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+ 
+  }
+  .edittitle {
+    font-size: 1.9rem
+  }
+
+  .idea-edit{
+    padding-top: 150px;
+    margin-left: 10px;
+    width: 1200px;
+  }
+
+  .idea-image {
+    margin: 25px 0px;
+    width: 400px;
+    border-color: #175676;
+    border-style: solid;
+    border-width: 5px;
+  }
+
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 30px;
+    color: black;
+    font-weight: bold;
+  }
+
+  .idea-edit-buttons {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    color: #175676;
+   font-weight: bold;
+  }
+  .delete-button {
+    margin-top: 5px;
+    color: #175676;
+   font-weight: bold;
+  }
+  .edit-button {
+    margin-top: 5px;
+    color: #175676;
+   font-weight: bold
+  }
+  input {
+    float:right;
+    width: 70%;
+  }

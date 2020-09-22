@@ -30,7 +30,7 @@ function Login(props) {
       >
         <label>
           Username:
-          <input
+          <input className="reginput"
             type="text"
             name="username"
             value={username}
@@ -40,7 +40,7 @@ function Login(props) {
         <br />
         <label>
           Password:
-          <input
+          <input className="reginput"
             type="password"
             name="password"
             value={password}
@@ -48,8 +48,8 @@ function Login(props) {
           />
         </label>
         <br />
-          <button>Login</button>
-          <Link to="/register">Register</Link>
+          <button className='loginbtn'>Login</button>
+          <Link to="/register" className='registerlink'>Register</Link>
         </form>
         </div>
     </div>

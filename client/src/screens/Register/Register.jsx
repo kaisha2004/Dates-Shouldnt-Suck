@@ -21,8 +21,9 @@ export default function Register(props) {
   }
   return (
     <div className="background3">
-      <h1>Please Sign-Up</h1>
-      <form
+      <div className="regcontent"> 
+      <h1 className='regtitle'>Please Sign-Up</h1>
+      <form className='regform'
         onSubmit={(e) => {
           e.preventDefault()
           props.registerSubmit(formData)
@@ -30,7 +31,7 @@ export default function Register(props) {
       >
         <label>
           Username:
-          <input
+          <input className="reginput"
             type="text"
             name="username"
             value={username}
@@ -40,7 +41,7 @@ export default function Register(props) {
         <br />
         <label>
           Age:
-          <input
+          <input className="reginput"
             type='integer'
             name="age"
             value={age}
@@ -50,7 +51,7 @@ export default function Register(props) {
         <br />
         <label>
           Email:
-          <input
+          <input className="reginput"
             type="text"
             name="email"
             value={email}
@@ -60,7 +61,7 @@ export default function Register(props) {
         <br />
         <label>
           Password:
-          <input
+          <input className="reginput"
             type="password"
             name="password"
             value={password}
@@ -68,8 +69,9 @@ export default function Register(props) {
           />
         </label>
         <br />
-        <button>Register</button>
+        <button className='regbtn'>Register</button>
         </form>
+        </div>
     </div>
   )
   

@@ -9,12 +9,31 @@
 
   .logincontent {
     padding-top: 150px;
-   
+  
+  }
+  .logintitle {
+    color: white;
+  }
+
+  .loginbtn {
+    width: 249px;
+    color: #175676;
+    font-weight: bold;
+    font-size: 0.9rem
+
   }
  
   .loginform {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 250px;
+    color: white;
+    font-weight: bold
   
+  }
+
+  .registerlink {
+    margin-top: 10px;
+    color:  black;
+    font-weight: bold
   }
