@@ -6,14 +6,23 @@ light blue : #cce6f4
 
 */
 
+html, .background7 {
+  height: 100%;
+}
+
 .background7 {
   background-image: url('../../photos/date7.jpg');
-  background-size: cover;
-  position:fixed;
+  background-size: 100% 100%; 
+  background-repeat: repeat;
+  background-position: center center;
+  position:absolute;
   top:0;
   bottom:0;
+  height: 100%;
   width:100%;
   z-index:100;
+  margin: 0;
+  overflow-x: scroll
   }
 
 .summary{

@@ -4,6 +4,19 @@ import { Link, useHistory } from "react-router-dom"
 import "./Create.css"
 
 
+const options = [
+  { label: 'Bike Trails', value:'Bike Trails' },
+  { label: 'Boat Bars', value:'Boat Bars' },
+  { label: 'Water Sports', value:'Water Sports' },
+  { label: 'Cooking Class', value:'Cooking Class' },
+  { label: 'Drive In', value:'Drive in' },
+  { label: 'Outdoor Music', value:'outdoor_music' },
+  { label: 'Picnic Spots', value:'picnic_spots' },
+  {label: 'Rooftops', value:'Rooftops'}
+  
+]
+
+
 function Create(props) {
   const [title, updateTitle] = useState('')
   const [city, updateCity] = useState('')
@@ -30,7 +43,7 @@ function Create(props) {
    let response = await addReview(reviewForm)
     console.log(response)
     if (response) {
-      History.push('/dateideas')
+      History.push('/')
     }
    
   }
@@ -44,13 +57,20 @@ function Create(props) {
   return (
    <div className="background5">
       <form onSubmit={handleSubmit} className='createform'>
-    <h2 className="form_title">Submit Your Date Idea!</h2>
-    <label htmlFor="Image">Image:</label>
-    <input type="text" id="img_url" placeholder="URL" onChange={e => updateImgUrl(e.target.value)} value={img_url} />
-    <label htmlFor="Title">Title:</label>
-    <input type="text" id="Title" onChange={e => updateTitle(e.target.value)} value={title} />
-    <label htmlFor="Category">Category:</label>
-      <input type="text" id="Category" onChange={e => updateCategory(e.target.value)} value={category} />
+        <h2 className="form_title">Submit Your Date Idea!</h2>
+        <label htmlFor="Image">Image:</label>
+        <input type="text" id="img_url" placeholder="URL" onChange={e => updateImgUrl(e.target.value)} value={img_url} />
+        <label htmlFor="Title">Title:</label>
+        <input type="text" id="Title" onChange={e => updateTitle(e.target.value)} value={title} />
+        <label for="Category">Category:</label>
+        <select id="Category" name="Category" onChange={e => updateCategory(e.target.value)} value={category}  >
+        {options.map(option => (
+          <option value={option.label}>{option.label}</option>
+        ))}
+          </select>
+        
+        {/* value = 
+       /> */}
       <label htmlFor="City">City:</label>
         <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
         <label htmlFor="Review">Review:</label>

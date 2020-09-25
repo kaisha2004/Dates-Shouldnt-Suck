@@ -29,6 +29,10 @@ export const getAllUsers = async () => {
   const resp = await api.get("/users")
   return resp.data
 }
+export const getAllReviews = async () => {
+  const resp = await api.get("/reviews")
+  return resp.data
+}
 
 export const addReview = async (formData) => {
   const resp = await api.post(`/reviews`, formData);

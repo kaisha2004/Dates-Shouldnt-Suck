@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Switch, Route } from "react-router-dom"
-import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea } from '../../services/date_ideas';
+import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea, getAllReviews } from '../../services/date_ideas';
 import Create from '../Create/Create'
 import { Link } from "react-router-dom"
 import "./Date_Ideas.css";
@@ -9,7 +9,7 @@ import "./Date_Ideas.css";
  
 function Date_Ideas(props) {
   const [dateIdeas, setDateIdeas] = useState([])
-  const [newIdea, setNewIdea] = useState(false)
+  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
         const fetchDateIdeas = async () => {
@@ -22,6 +22,14 @@ function Date_Ideas(props) {
         fetchDateIdeas()
       }, []) 
 
+      useEffect(() => {
+        const fetchReviews = async () => {
+          const reviewArray = await getAllReviews()
+          setReviews(reviewArray)
+          
+        }
+        fetchReviews()
+      }, []) 
  
   const renderEdit = (date_idea) => {
     if (props.currentUser && props.currentUser.id === date_idea.user_id) {
@@ -38,10 +46,10 @@ function Date_Ideas(props) {
           <div className='dateinfo'>
           <h1 className='datetitle'>{date_idea.title}</h1>
           <h3 className='datecity'>City: {date_idea.city} </h3>
-          <h3 className='dateauthor'>Submitted By: {date_idea.user.username}</h3>
+          <h3 className='dateauthor'>Submitted By: {date_idea.user.username}, {date_idea.user.age}yrs. old </h3>
           <h4 className='datecat'>Category: {date_idea.category}</h4>
           {date_idea.reviews.map(review => (
-            <p className='review'>{review.content}</p>
+            <p className='review'>{review.content} - {review.user_id}</p>
           ))}
             {renderEdit(date_idea)}
             </div>
