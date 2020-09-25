@@ -68,9 +68,7 @@ function Create(props) {
           <option value={option.label}>{option.label}</option>
         ))}
           </select>
-        
-        {/* value = 
-       /> */}
+    
       <label htmlFor="City">City:</label>
         <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
         <label htmlFor="Review">Review:</label>

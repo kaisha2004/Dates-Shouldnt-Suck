@@ -69,7 +69,7 @@ export default function Register(props) {
           />
         </label>
         <br />
-        <button className='regbtn'>Register</button>
+        <button id= 'regbtn' className='regbtn'>Register</button>
         </form>
         </div>
     </div>

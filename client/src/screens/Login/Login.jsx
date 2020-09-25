@@ -48,8 +48,8 @@ function Login(props) {
           />
         </label>
         <br />
-          <button className='loginbtn'>Login</button>
-          <Link to="/register" className='registerlink'>Register</Link>
+          <button id='loginbtn' className='loginbtn'>Login</button>
+          <Link to="/register" className='registerlink'><button id='registerbtn' className='registerbtn'>Register</button></Link>
         </form>
         </div>
     </div>
