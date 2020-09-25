@@ -1,6 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Redirect } from "react-router-dom";
-import { getAllDateIdeas, putDateIdea, getOneDateIdea, postDateIdea, deleteDateIdea } from '../../services/date_ideas';
+import React, { useState, useEffect } from "react"
+import { useParams, Redirect } from "react-router-dom"
+import {
+  getAllDateIdeas,
+  putDateIdea,
+  getOneDateIdea,
+  postDateIdea,
+  deleteDateIdea,
+} from "../../services/date_ideas"
 import "./Update.css"
 
 function Update(props) {
@@ -9,59 +15,57 @@ function Update(props) {
     title: "",
     city: "",
     category: "",
-  });
+  })
 
-  const [isUpdated, setIsUpdated] = useState(false);
-  const [isDateIdeaDeleted, setIsDateIdeaDeleted] = useState(false);
-  const [imagePath, updImagePath] = useState("");
-  const { id } = useParams();
+  const [isUpdated, setIsUpdated] = useState(false)
+  const [isDateIdeaDeleted, setIsDateIdeaDeleted] = useState(false)
+  const [imagePath, updImagePath] = useState("")
+  const { id } = useParams()
 
   useEffect(() => {
     const fetchDateIdea = async () => {
-      const data = await getOneDateIdea(id);
-      setDateIdea(data);
-    };
-    fetchDateIdea();
-  }, [id]);
+      const data = await getOneDateIdea(id)
+      setDateIdea(data)
+    }
+    fetchDateIdea()
+  }, [id])
 
   useEffect(() => {
     try {
-      updImagePath(require(`../../photos/${dateIdea.img_url}`));
+      updImagePath(require(`../../photos/${dateIdea.img_url}`))
     } catch (err) {
-      updImagePath(require("../../photos/noimg.jpg"));
+      updImagePath(require("../../photos/noimg.jpg"))
     }
-  }, [dateIdea]);
+  }, [dateIdea])
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setDateIdea({
       ...dateIdea,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleDelete = async (e) => {
-    e.preventDefault();
-    const deleted = await deleteDateIdea(dateIdea.id);
+    e.preventDefault()
+    const deleted = await deleteDateIdea(dateIdea.id)
     if (deleted) {
-      setIsDateIdeaDeleted(!isDateIdeaDeleted);
+      setIsDateIdeaDeleted(!isDateIdeaDeleted)
     }
-  };
-
- 
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const updatedDateIdea = await putDateIdea(id, dateIdea);
-    setIsUpdated(updatedDateIdea);
-  };
+    e.preventDefault()
+    const updatedDateIdea = await putDateIdea(id, dateIdea)
+    setIsUpdated(updatedDateIdea)
+  }
 
   if (isUpdated) {
-    return <Redirect to={"/dateideas"} />;
+    return <Redirect to={"/dateideas"} />
   }
 
   if (isDateIdeaDeleted) {
-    return <Redirect to={"/dateideas"} />;
+    return <Redirect to={"/dateideas"} />
   }
 
   return (
@@ -72,7 +76,11 @@ function Update(props) {
           {dateIdea.img_url.length > 0 && (
             <img
               className="idea-image"
-              src={dateIdea.img_url.startsWith("http") ? dateIdea.img_url : imagePath}
+              src={
+                dateIdea.img_url.startsWith("http")
+                  ? dateIdea.img_url
+                  : imagePath
+              }
               alt={dateIdea.title}
             />
           )}
@@ -80,7 +88,8 @@ function Update(props) {
         <form className="edit-form">
           <label htmlFor="img_url">
             ImageURL:
-            <input className='updateinput'
+            <input
+              className="updateinput"
               className="edit-img-link"
               placeholder="Img Link"
               value={dateIdea.img_url}
@@ -92,7 +101,8 @@ function Update(props) {
 
           <label htmlFor="title">
             Title:
-            <input className='updateinput'
+            <input
+              className="updateinput"
               className="input-title"
               placeholder="Title"
               name="title"
@@ -105,7 +115,8 @@ function Update(props) {
 
           <label htmlFor="city">
             City:
-            <input className='updateinput'
+            <input
+              className="updateinput"
               className="input-city"
               placeholder="City Name"
               name="city"
@@ -117,7 +128,8 @@ function Update(props) {
 
           <label htmlFor="category">
             Category:
-            <input className='updateinput'
+            <input
+              className="updateinput"
               className="input-category"
               placeholder="Category Name"
               name="category"
@@ -135,9 +147,8 @@ function Update(props) {
               DELETE
             </button>
           </div>
-          </form>
-        </div>
-      
+        </form>
+      </div>
     </section>
   )
 }

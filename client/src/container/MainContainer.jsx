@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react"
 import { Switch, Route } from "react-router-dom"
 import { getAllDateIdeas, putDateIdea, postDateIdea, deleteDateIdea} from '../services/date_ideas';
-import Date_Ideas from "../screens/Date_Ideas/Date_Ideas"
 import Home from "../screens/Home/Home"
 
 
-function MainContainer(props) {
+function MainContainer( currentUser) {
   const [dateIdeas, setDateIdeas] = useState([])
   // const [searchTerm, setSearchTerm] = useState("")
 
@@ -23,11 +22,12 @@ function MainContainer(props) {
   
   return (
     <Switch>
-      <Route path="/dateideas">
-        <Date_Ideas currentUser = {props.currentUser} />
-      </Route>
+      {/* <Route path="/dateideas">
+        <Home currentUser={currentUser}   />
+      </Route> */}
+   
       <Route path="/">
-        <Home />
+        <Home currentUser = {currentUser}/>
       </Route>
     </Switch>
   )

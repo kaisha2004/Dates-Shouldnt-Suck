@@ -34,3 +34,8 @@ export const addReview = async (formData) => {
   const resp = await api.post(`/reviews`, formData);
   return resp.data;
 }
+
+export const putReview = async (formData) => {
+  const resp = await api.put(`/reviews`, formData);
+  return resp.data;
+}

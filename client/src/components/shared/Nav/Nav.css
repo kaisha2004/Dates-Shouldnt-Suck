@@ -11,6 +11,8 @@ light blue : #cce6f4
   margin: 0px;
   padding: 0px;
   color: white;
+  position: relative;
+  z-index: 2
 }
 .nav-title {
   font-family: 'Gravitas One', cursive;

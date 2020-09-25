@@ -10,15 +10,17 @@ import "./Date_Ideas.css";
 function Date_Ideas(props) {
   const [dateIdeas, setDateIdeas] = useState([])
   const [newIdea, setNewIdea] = useState(false)
-  
-  
+
   useEffect(() => {
         const fetchDateIdeas = async () => {
           const dateIdeaArray = await getAllDateIdeas()
-          setDateIdeas(dateIdeaArray)
+         
+          const newArr = dateIdeaArray.filter(idea => idea.category === props.term.value)
+          setDateIdeas(newArr)
+          
         }
         fetchDateIdeas()
-      }, [newIdea]) 
+      }, []) 
 
  
   const renderEdit = (date_idea) => {
@@ -33,7 +35,7 @@ function Date_Ideas(props) {
       {dateIdeas.map(date_idea => (
         <div className='datesummary'>
           <img src={`${date_idea.img_url}`} className='idea_pics' />
-          <div clasName='dateinfo'>
+          <div className='dateinfo'>
           <h1 className='datetitle'>{date_idea.title}</h1>
           <h3 className='datecity'>City: {date_idea.city} </h3>
           <h3 className='dateauthor'>Submitted By: {date_idea.user.username}</h3>

@@ -7,6 +7,7 @@ import Create from "./screens/Create/Create"
 import Update from "./screens/Update/Update"
 import Layout from "./components/shared/Layout/Layout"
 import MainContainer from "./container/MainContainer"
+import Home from "./screens/Home/Home"
 import { loginUser, registerUser, verifyUser } from "./services/auth"
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     const handleVerify = async () => {
       const userData = await verifyUser()
       setCurrentUser(userData)
-      history.push("/dateideas")
+      history.push("/")
     }
     handleVerify()
   }, [])
@@ -50,9 +51,7 @@ function App() {
             <Register registerSubmit={registerSubmit} />
           </Route>
           <Route path="/">
-            <MainContainer
-              currentUser={currentUser}
-            />
+            <Home currentUser={currentUser}/>
           </Route>
         </Switch>
       </Layout>

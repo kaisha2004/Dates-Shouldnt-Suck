@@ -8,6 +8,12 @@ light blue : #cce6f4
 
 .background7 {
   background-image: url('../../photos/date7.jpg');
+  background-size: cover;
+  position:fixed;
+  top:0;
+  bottom:0;
+  width:100%;
+  z-index:100;
   }
 
 .summary{
@@ -21,7 +27,7 @@ light blue : #cce6f4
   border-color: #175676;
   border-style: solid;
   border-width: 1px;
-  width: 1150px;
+  width: 800px;
 }
 
 .idea_pics {
