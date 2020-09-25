@@ -73,7 +73,7 @@ function Create(props) {
         <input type="text" id="City" onChange={e => updateCity(e.target.value)} value={city} />
         <label htmlFor="Review">Review:</label>
     <textarea type="textarea" id="Review" cols="30" rows="10" onChange={e => updateReview(e.target.value)} value={review} />
-    <button className='createsubmit'>Submit</button>
+    <button id='createSubmit' className='createSubmit'>Submit</button>
 
       
   </form>
