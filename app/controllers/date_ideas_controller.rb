@@ -14,7 +14,7 @@ class DateIdeasController < ApplicationController
   # GET /date_ideas/1
   def show
     @date_idea = DateIdea.find(params[:id])
-    render json: @date_idea, include: :reviews
+    render json: @date_idea, include: [:user, :reviews]
   end
 
   # POST /date_ideas
@@ -41,12 +41,11 @@ class DateIdeasController < ApplicationController
     # DELETE /date_ideas/1
     def destroy
       @date_idea= DateIdea.find(params[:id])
-      if  @date_idea.destroy 
+        if @date_idea.destroy 
         render json: {message: "Deleted"}
-      else 
-        render json: @date_idea.errors, status: :unprocessable_entity
-      end
-
+        else 
+          render json: @date_idea.errors, status: :unprocessable_entity
+        end
     end
 
  

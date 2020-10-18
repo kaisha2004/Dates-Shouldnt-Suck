@@ -1,24 +1,27 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:create, :update, :destroy]
+  before_action :authorize_request, only: [ :create, :destroy]
+  before_action :set_review, only: [ :update, :destroy]
  
 
   # GET /reviews
   def index
     @reviews = Review.all
 
-    render json: @reviews
-  end
+    render json: @reviews, include: [:user, :date_ideas]
 
   # GET /reviews/1
   def show
     @review = Review.find(params[:id])
-    render json: @review
+    render json: @review, include: [:user, :date_ideas]
   end
 
   # POST /reviews
   def create
+    puts params
+    @date = DateIdea.find(params[:id])
     @review = Review.new(review_params)
     @review.user = @current_user
+    @review.date_idea = @date
 
     if @review.save
       render json: @review, status: :created
@@ -50,6 +53,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def review_params
-      params.require(:review).permit(:content, :date_idea_id)
+      params.require(:review).permit(:content, :id)
     end
 end

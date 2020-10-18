@@ -2,11 +2,19 @@ header {
   background-color: #175676;
   position: absolute;
   width: 100vw;
-  margin-bottom: 150px;
-  padding-bottom: 25px;
   top:0;
-  z-index: 2
-
+  z-index: 2;
+  padding: 0px; 
+  height: 130px;
+  margin:0
+}
+.layout {
+  margin: 0;
+  padding: 0
+}
+nav {
+  margin: 0;
+  padding: 0
 }
 
 @media screen and (max-width: 500px) {

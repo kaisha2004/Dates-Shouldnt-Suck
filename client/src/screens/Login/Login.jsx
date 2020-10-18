@@ -26,6 +26,7 @@ function Login(props) {
         onSubmit={(e) => {
           e.preventDefault()
           props.loginSubmit(formData)
+        
         }}
       >
         <label>
@@ -49,7 +50,8 @@ function Login(props) {
         </label>
         <br />
           <button id='loginbtn' className='loginbtn'>Login</button>
-          <Link to="/register" className='registerlink'><button id='registerbtn' className='registerbtn'>Register</button></Link>
+          <Link to="/register" className='registerlink'>
+            <button id='registerbtn' className='registerbtn'>Register</button></Link>
         </form>
         </div>
     </div>

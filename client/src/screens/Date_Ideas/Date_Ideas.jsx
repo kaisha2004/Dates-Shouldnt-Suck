@@ -14,7 +14,6 @@ import "./Date_Ideas.css"
 
 function Date_Ideas(props) {
   const [dateIdeas, setDateIdeas] = useState([])
-  const [users, setUsers] = useState([])
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
@@ -29,13 +28,6 @@ function Date_Ideas(props) {
     fetchDateIdeas()
   }, [])
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const userArray = await getAllUsers()
-      setUsers(userArray)
-    }
-    fetchUsers()
-  }, [])
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -70,7 +62,7 @@ function Date_Ideas(props) {
               </h3>
               <h4 className="datecat">Category: {date_idea.category}</h4>
               {date_idea.reviews.map((review) => (
-                <p className="review">{review.content} - {review.user_id}</p>
+                <p className="review">{review.content} - {review.username}</p>
               ))}
               {renderEdit(date_idea)}
             </div>

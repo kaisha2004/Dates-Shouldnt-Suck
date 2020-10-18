@@ -12,15 +12,25 @@ function Nav(props) {
   return (
   <nav className='nav'>
       <h1 className='nav-title'>Dates Shouldn't Suck</h1>
-      <NavLink className="write" to="/" onClick={ refreshPage }>Home</NavLink>
-      <NavLink className="write" to="/createidea">Submit A Date Idea</NavLink>
-      {/* {
-        currentUser ? 
-          <div>
-            <p>Hello {currentUser.username}!</p>
-            <button>Logout</button>
-          </div> : */}
+      <div className="subnav">
+        <NavLink className="write" to="/">Home</NavLink>
+        {
+            currentUser ?
+            <NavLink className="write" to="/createidea">Submit A Date Idea</NavLink> :
+             <NavLink className="write" to="/login">Submit A Date Idea</NavLink>
+            }
         
+       
+          {
+            currentUser ?
+              <div className="loguser">
+                <p id='username1'>Hello {currentUser.username}!</p>
+                <button id='logout' onClick={props.handleLogout}>Logout</button>
+              </div> :
+              <NavLink id="hidden" to='/login'>Login/Register</NavLink>
+            }
+        
+      </div>
   </nav>
   )
 }

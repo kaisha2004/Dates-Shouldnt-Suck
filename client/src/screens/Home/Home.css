@@ -1,4 +1,7 @@
-
+body {
+  display: flex;
+  background-color: #175676;
+}
 .background1 {
 background-image: url('../../photos/date1.jpg');
 background-size: cover;

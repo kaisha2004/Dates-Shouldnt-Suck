@@ -1,4 +1,18 @@
+.search {
+display: flex;
+flex-direction: column; 
+justify-content: center;
+align-items: center;
+margin-top: 90px
+}
+
+.choose {
+  color: white;
+  text-shadow:1px 1px 2px black, 0 0 25px #377a98, 0 0 5px darkblue
+}
+
 .searchsize {
   width: 100%;
-  max-width: 800px
+  max-width: 800px;
+  box-shadow: 10px 10px 60px black;
 }

@@ -11,8 +11,8 @@ const Search = ({ options, onChange }) => {
   
 
   return (
-    <div>
-      <h1>Choose a Date Idea</h1>
+    <div className="search">
+      <h1 className="choose">Choose a Date Idea</h1>
       <Select options={options} className='searchsize' onChange={onChange}/>
      
     </div>
