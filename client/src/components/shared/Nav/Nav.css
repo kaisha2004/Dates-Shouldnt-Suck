@@ -33,7 +33,10 @@ light blue : #cce6f4
 }
 
 #hidden {
-  display: none
+  display: none;
+  margin: 10px 0px 0px 940px;
+  color: white;
+  
 }
 
 

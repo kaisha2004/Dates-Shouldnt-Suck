@@ -35,23 +35,23 @@ function Create(props) {
         img_url: img_url
       }
     })
-    const id = data.id
-    let reviewForm = {
-      id, 
-      content: review
-   }
-   let response = await addReview(reviewForm)
-    console.log(response)
-    if (response) {
+  //   const id = data.id
+  //   let reviewForm = {
+  //     id, 
+  //     content: review
+  //  }
+  //  let response = await addReview(reviewForm)
+  //   console.log(response)
+  //   if (response) {
       History.push('/')
-    }
+    
    
   }
 
   
-  if (!props.currentUser) {
-     History.push('/login')
-  }
+  // if (!props.currentUser) {
+  //    History.push('/login')
+  // }
   
 
   return (

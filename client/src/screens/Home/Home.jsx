@@ -40,10 +40,8 @@ function Home(currentUser) {
   return (
     
     <div className='background1'>
-      <div className='searchdiv'>
-        {showSearch ? 
+      <div className='searchdiv'> 
         <Search options={options} onChange={onChangeInput} /> 
-        : null }
        </div>
       <Switch>
       <Route path="/dateideas">

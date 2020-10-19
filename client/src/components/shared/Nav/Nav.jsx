@@ -27,7 +27,7 @@ function Nav(props) {
                 <p id='username1'>Hello {currentUser.username}!</p>
                 <button id='logout' onClick={props.handleLogout}>Logout</button>
               </div> :
-              <NavLink id="hidden" to='/login'>Login/Register</NavLink>
+              <NavLink id="hidden" to='/login'>Login / Register</NavLink>
             }
         
       </div>
