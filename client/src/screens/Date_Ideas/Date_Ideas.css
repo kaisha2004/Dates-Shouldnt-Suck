@@ -75,6 +75,11 @@ html, .background7 {
 .review {
   margin: 0px 50px 10px 30px;
 }
+.datebtns {
+  display: flex;
+  flex-direction: column
+}
+
 #datebtn {
   margin: 10px 10px 0px 0px;
   background-color: white;
@@ -91,3 +96,9 @@ html, .background7 {
   opacity: 1;
 }
 
+#revbtn {
+  margin: 10px 10px 0px 0px;
+  background-color: white;
+  color: #175676;
+  font-weight: bold;
+}
