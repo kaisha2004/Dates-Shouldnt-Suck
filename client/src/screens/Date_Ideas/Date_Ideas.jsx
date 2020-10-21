@@ -67,6 +67,9 @@ function Date_Ideas(props) {
             {renderEdit(date_idea)}
           </div>
         ))}
+        <Link to={"/"}>
+          <button id="resetbtn">Choose Another Date Idea</button>
+        </Link>
       </div>
     </div>
   )

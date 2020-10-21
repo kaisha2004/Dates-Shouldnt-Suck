@@ -23,8 +23,9 @@ puts "5 users created"
 @date_idea4 = DateIdea.create!(title: "Grand Banks", price_exp: 3, city: "New York City", category: "Boat Bars", img_url: "https://wswd-wordpress-production.s3.amazonaws.com/content/uploads/2018/07/15153625/GRAND-BANKS-NYC-FB-copy-1200x630.jpg", user: @user4)
 @date_idea5 = DateIdea.create!(title: "Skyline Drive-In ", price_exp: 2, city: "Brooklyn", category: "Drive In", img_url: "https://offloadmedia.feverup.com/secretnyc.co/wp-content/uploads/2020/06/10101747/82862589_260853392003955_6490946503075211457_n-1.jpg", user: @user5)
 @date_idea6 = DateIdea.create!(title: "Pizza School NYC", price_exp: 2, city: "New York City", category: "Cooking Class", img_url: "https://media-cdn.tripadvisor.com/media/photo-s/11/e1/c5/08/photo1jpg.jpg", user: @user4)
+@date_idea7 = DateIdea.create!(title: "Bronx Botanical Garden", price_exp: 2, city: "Bronx", category: "Picnic Spots", img_url: "https://hips.hearstapps.com/rbk.h-cdn.co/assets/16/37/2048x1365/gallery-1474056841-gettyimages-171789024.jpg", user: @user5)
 
-  puts "6 ideas created"
+  puts "7 ideas created"
 
 @review = Review.create!(content: "My date and I explored the whole Island by Cycling, sitting at a Cafe sipping a Iced Passion Tea, and enjoyed seeing Jazz Age Dance Party. That was beautiful part of our trip.", user: @user1, date_idea: @date_idea1, username: "michelle")
 # @review = Review.create!(content: "Brought a date here and had an amazing time. Rented a double seated bike which has a top covering which helps in the summer times.", user: @user5, date_idea: @date_idea1, username: "betsy")
@@ -42,8 +43,9 @@ puts "5 users created"
 @review = Review.create!(content: "This new guy I'm seeing suggested the Skyline Drive-in and we found it to be such a great and relatively safe activity during COVID times. I felt that the staff were working very hard to keep us safe and the evening running smoothly.", user: @user5, date_idea: @date_idea5, username: "betsy")
 # @review = Review.create!(content: "Since we started going here a few weeks ago, we have really enjoyed ourselves. The staff are extremely friendly, the concessions are well done, and fairly priced.", user: @user3, date_idea: @date_idea5, username: "clarissa")
   
-@review = Review.create!(content: "Had a date night at the Pizza School. It was so much fun and obviously also delicious. There were drinkers and non-drinkers, meat-eaters and vegetarians. The class was a blast for everyone. Such a great date idea to catch up with friends in a way that isn’t typical dinner/drinks.", user: @user4, date_idea: @date_idea6, username: "tom")
+@review = Review.create!(content: "Had a date night at the Pizza School. It was so much fun and obviously also delicious. There were drinkers and non-drinkers, meat-eaters and vegetarians. The class was a blast for everyone. Such a great date idea in a way that isn’t typical dinner/drinks.", user: @user4, date_idea: @date_idea6, username: "tom")
 # @review = Review.create!(content: "Great experience. My girlfriend and I absolutely loved it. The class is fun as well as educational and the instructors are amazing. Highly recommend this experience for a date night or family affair.", user: @user2, date_idea: @date_idea6, username: "ryan")
+@review = Review.create!(content: "Absolutely a wonderful, tranquil, stress relieving experience. I enjoyed this so much. The grounds are breathtaking! So much beauty to take in. The smells, colors, trails and twists and turn really do teleport you. ", user: @user5, date_idea: @date_idea7, username: "betsy")
 
 # 15.times do
 #   User.create!(username: Faker::Internet.username, email: Faker::Internet.email, age: Faker::Number.within(range: 18..50), password: Faker::Internet.password(min_length: 6))

@@ -10,9 +10,8 @@ const options = [
   { label: 'Boat Bars', value:'Boat Bars' },
   { label: 'Water Sports', value:'Water Sports' },
   { label: 'Cooking Class', value:'Cooking Class' },
-  { label: 'Drive In', value:'Drive in' },
-  { label: 'Outdoor Music', value:'outdoor_music' },
-  { label: 'Picnic Spots', value:'picnic_spots' },
+  { label: 'Drive In', value:'Drive In' },
+  { label: 'Picnic Spots', value:'Picnic Spots' },
   {label: 'Rooftops', value:'Rooftops'}
   
 ]

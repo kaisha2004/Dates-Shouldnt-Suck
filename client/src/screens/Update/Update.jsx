@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useParams, Redirect } from "react-router-dom"
 import {
-  getAllDateIdeas,
   putDateIdea,
   getOneDateIdea,
-  postDateIdea,
   deleteDateIdea,
 } from "../../services/date_ideas"
 import "./Update.css"
@@ -15,9 +13,11 @@ function Update(props) {
     title: "",
     city: "",
     category: "",
+
   })
 
   const [isUpdated, setIsUpdated] = useState(false)
+  const [isReviewUpdate, setIsReviewUpdate] = useState(false)
   const [isDateIdeaDeleted, setIsDateIdeaDeleted] = useState(false)
   const [imagePath, updImagePath] = useState("")
   const { id } = useParams()
@@ -58,20 +58,21 @@ function Update(props) {
     e.preventDefault()
     const updatedDateIdea = await putDateIdea(id, dateIdea)
     setIsUpdated(updatedDateIdea)
+   
   }
 
   if (isUpdated) {
-    return <Redirect to={"/dateideas"} />
+    return <Redirect to={"/"} />
   }
 
   if (isDateIdeaDeleted) {
-    return <Redirect to={"/dateideas"} />
+    return <Redirect to={"/"} />
   }
 
   return (
     <section className="editsection">
       <div className="idea-edit">
-        <h1 className="edittitle">Edit Your Post!</h1>
+        <h1 className="edittitle">Edit Date Info!</h1>
         <div className="img-container">
           {dateIdea.img_url.length > 0 && (
             <img
@@ -90,7 +91,7 @@ function Update(props) {
             ImageURL:
             <input
               className="updateinput"
-              className="edit-img-link"
+              id="edit-img-link"
               placeholder="Img Link"
               value={dateIdea.img_url}
               name="imgURL"
@@ -103,7 +104,7 @@ function Update(props) {
             Title:
             <input
               className="updateinput"
-              className="input-title"
+              id="input-title"
               placeholder="Title"
               name="title"
               value={dateIdea.title}
@@ -113,11 +114,12 @@ function Update(props) {
             />
           </label>
 
+
           <label htmlFor="city">
             City:
             <input
               className="updateinput"
-              className="input-city"
+              id="input-city"
               placeholder="City Name"
               name="city"
               value={dateIdea.city}
@@ -130,7 +132,7 @@ function Update(props) {
             Category:
             <input
               className="updateinput"
-              className="input-category"
+              id="input-category"
               placeholder="Category Name"
               name="category"
               value={dateIdea.category}
@@ -139,11 +141,13 @@ function Update(props) {
             />
           </label>
 
+        
+
           <div className="idea-edit-buttons">
-            <button className="edit-button" onClick={handleSubmit}>
+            <button id="edit-button" onClick={handleSubmit}>
               EDIT
             </button>
-            <button className="delete-button" onClick={handleDelete}>
+            <button id="delete-button" onClick={handleDelete}>
               DELETE
             </button>
           </div>
