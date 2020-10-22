@@ -23,9 +23,14 @@ function App() {
   }, [])
 
   const loginSubmit = async (loginData) => {
-    const userData = await loginUser(loginData)
+    try {
+      const userData = await loginUser(loginData)
       setCurrentUser(userData)
       history.push("/createidea")
+    } catch (error) {
+      setCurrentUser(null);
+      history.push('/register');
+    }
   }
   const registerSubmit = async (registerData) => {
     const userData = await registerUser(registerData)

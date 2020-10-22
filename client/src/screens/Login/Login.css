@@ -111,3 +111,38 @@
        margin-top: 30px;
       }
   }
+
+  @media screen and (min-width:501px) and (max-width:1100px)  { 
+    .background2 {
+      background-image: url('../../photos/date3.jpg');
+      background-size: 100% 100%; 
+      background-repeat: repeat;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100vw;
+      z-index: 0;
+      }
+
+    .logintitle {
+      margin-top: 60px;
+      font-size:55px;
+      }
+      .loginform {
+        width: 280px;
+        
+      }
+    .loglabels {
+      font-size: 23px;
+    }
+    #loginbtn {
+      width: 278px;
+    }
+  
+
+    #registerbtn {
+      width: 278px;
+    }
+  
+  }

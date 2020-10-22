@@ -1,15 +1,21 @@
+import React from 'react'
 import api from './api-config';
+import { Link } from "react-router-dom"
 
 
-  export const loginUser = async (loginData) => {
-    try {const resp = await api.post('/auth/login', { authentication: loginData })
+export const loginUser = async (loginData) => {
+  
+  try {
+    const resp = await api.post('/auth/login', { authentication: loginData })
     localStorage.setItem('authToken', resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
-      return resp.data.user
-    }
+    return resp.data.user
+  }
   
   catch (error) {
-    alert("You need to register first")
+  
+    alert("you need to register!")
+    
     
 }}
    

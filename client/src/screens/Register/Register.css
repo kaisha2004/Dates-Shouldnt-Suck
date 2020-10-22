@@ -89,3 +89,35 @@ z-index: 0;
       margin-top: 30px;
     }
 }
+@media screen and (min-width:501px) and (max-width:1100px)  {
+
+  .background3 {
+    background-image: url('../../photos/date13.jpeg');
+    background-size: 100% 100%; 
+    background-repeat: repeat;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    }
+
+    .regcontent {
+      width: 280px;
+    }
+    .regtitle{
+      margin-top: 60px;
+      font-size: 37px;
+    }
+
+    .regform {
+      margin-top: 35px;
+      font-size: 20px
+    }
+
+    #regbtn {
+      width: 278px;
+      
+    }
+}

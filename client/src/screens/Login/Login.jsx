@@ -29,7 +29,7 @@ function Login(props) {
         
         }}
       >
-        <label>
+        <label className="loglabels">
           Username:
           <input className="reginput"
             type="text"
@@ -39,7 +39,7 @@ function Login(props) {
           />
         </label>
         <br />
-        <label>
+        <label className="loglabels">
           Password:
           <input className="reginput"
             type="password"
