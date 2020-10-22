@@ -104,3 +104,56 @@
     width: 100%;
     margin-bottom: 5px;
   }
+
+  @media screen and (min-width:300px) and (max-width:500px)  {
+ 
+    .editsection {
+      background-image: url("../../photos/date9.jpg");
+      background-size: 100% 100%; 
+      background-repeat: repeat;
+      background-position: center center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      height: 800px;
+      width: 100vw;
+      z-index: 0;
+    }
+    .idea-image {
+      margin: 10px 0px;
+      width: 150px;
+      border-width: 3px;
+    }
+    
+    .edittitle {
+      margin-top: 40px;
+    }
+    .idea-edit {
+      
+      margin-left: 18px;
+      width: 1200px;
+    }
+    .edit-form {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0px;
+      width: 25%;
+      font-size: 16px;
+    }
+    #edit-img-link, #input-title, #input-city, #input-category{
+      margin-bottom: 3px;
+    }
+
+    .idea-edit-buttons {
+      width: 308px;
+      display: flex;
+      flex-direction: column;
+      color: #175676;
+      font-weight: bold;
+    }
+   
+    #delete-button {
+      margin: 2px 0px 20px 0px;
+  }
+  
+}

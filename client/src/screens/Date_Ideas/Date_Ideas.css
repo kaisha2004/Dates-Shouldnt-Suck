@@ -63,13 +63,7 @@ html, .background7 {
   color: #ba324f;
   margin-left: 30px;
 }
-.datecat {
-  margin-left: 30px;
-}
-.datecity {
-  margin-left: 30px;
-}
-.dateauthor {
+.datecat, .datecity, .dateauthor {
   margin-left: 30px;
 }
 .review {
@@ -118,4 +112,42 @@ html, .background7 {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   opacity: 1;
+}
+
+@media screen and (min-width:300px) and (max-width:500px)  {
+
+  .dateTitle {
+    font-size: 30px;
+    margin-top: 190px
+  }
+  .datesummary {
+    margin: 0px 0px 30px 10px;
+    width: 370px;
+    height: 350px;
+  }
+  .idea_pics {
+    width: 40%;
+    height: 30%;
+    
+   }
+   .datetitle {
+    color: #ba324f;
+    margin-left: 15px;
+    font-size: 19px;
+  }
+  .datecat, .datecity, .dateauthor {
+    font-size: 14px;
+    margin: 0px 0px 11px 15px;
+  }
+  .review {
+    font-size: 13px;
+    margin: 0px 0px 10px 15px;
+  }
+  #datebtn {
+    font-size: 9px;
+  }
+  
+  #datebtn:hover{
+    font-size: 11px;
+  }
 }

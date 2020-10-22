@@ -16,3 +16,15 @@ margin-top: 90px
   max-width: 800px;
   box-shadow: 10px 10px 60px black;
 }
+
+@media screen and (min-width:300px) and (max-width:500px)  {
+  .searchsize {
+    width: 70%;
+    max-width: 800px;
+    box-shadow: 10px 10px 60px black;
+  }
+
+  .choose {
+    font-size: 1.7rem
+  }
+}

@@ -13,11 +13,11 @@ function Nav(props) {
   <nav className='nav'>
       <h1 className='nav-title'>Dates Shouldn't Suck</h1>
       <div className="subnav">
-        <NavLink className="write" to="/">Home</NavLink>
+        <NavLink className="write" id="home" to="/">Home</NavLink>
         {
             currentUser ?
-            <NavLink className="write" to="/createidea">Submit A Date Idea</NavLink> :
-             <NavLink className="write" to="/login">Submit A Date Idea</NavLink>
+            <NavLink className="write" id='submit1' to="/createidea">Submit A Date Idea</NavLink> :
+             <NavLink className="write" id='submit2' to="/login">Submit A Date Idea</NavLink>
             }
         
        
