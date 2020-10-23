@@ -1,16 +1,16 @@
-# Dating Shouldn't Suck
+# Dates Shouldn't Suck
 
 ![https://i.imgflip.com/ldmhi.jpg](https://i.imgflip.com/ldmhi.jpg)
 
 ## Overview
 
-_**Dating Shouldn't Suck** is an app that helps singles add spice to their dating lives and avoid the monotonous dinner or drink at a bar. Dating Shouldn't Suck (DSS) is a full stack application where users have full CRUD capabilities to share their favorite date ideas along with personal reviews. Its the Yelp of Dating! Let's face it, dating in today's world is hard and overwhelming but, here at DSS, we believe it doesn't have to suck!_
+_**Dates Shouldn't Suck** is an app that helps singles (or even couples lol) add spice to their dating lives and avoid the monotonous dinner or drink at a bar. Dating Shouldn't Suck (DSS) is a full stack application where users have CRUD capabilities to share their favorite date ideas along with personal reviews. Its the Yelp of Dating! Let's face it, dating in today's world is hard and overwhelming but, here at DSS, we believe they don't have to suck!_
 
 <br>
 
 ## MVP
 
-_The **Dating Shouldn't Suck** MVP will have a backend server built with Ruby on Rails exposing RESTful JSON endpoints. The server will include a database which consists of (3) tables, defined models, and full CRUD between non-user tables. In addition, the app will have a full CRUD functioning, interactive React front end. The front end will render data from back end APU and utilize client side routing through (8) components. Lastly, the front end will showcase impressive CSS styling, use of Flexbox, and responsive design on both desktop and mobile devices. The MVP will be delivered within the week timeframe alotted and deployed on Netlify (front end) and Heroku (back end).._
+_The **Dates Shouldn't Suck** MVP will have a backend server built with Ruby on Rails exposing RESTful JSON endpoints. The server will include a database which consists of (3) tables, defined models, and full CRUD between non-user tables. In addition, the app will have a full CRUD functioning, interactive React front end. The front end will render data from back end APU and utilize client side routing through (8) components. Lastly, the front end will showcase impressive CSS styling, use of Flexbox, and responsive design on both desktop and mobile devices. The MVP will be delivered within the week timeframe alotted and deployed on Netlify (front end) and Heroku (back end).._
 
 <br>
 
@@ -29,7 +29,18 @@ _The **Dating Shouldn't Suck** MVP will have a backend server built with Ruby on
 
 ### Libraries and Dependencies
 
-TBD
+ "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-select": "^3.1.0",
+    "select": "^1.1.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.1"
 
 <br>
 
@@ -108,20 +119,20 @@ src
 
 #### Time Estimates
 
-|               Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| :-------------------------------: | :------: | :------------: | :-----------: | :---------: |
-|    Create Ruby file structure     |    H     |     4 hrs      |      TBD      |     TBD     |
-|         Create Seed data          |    H     |     2 hrs      |      TBD      |     TBD     |
-|          Migrate models           |    H     |     2 hrs      |      TBD      |     TBD     |
-|     Code backend server files     |    H     |     5 hrs      |      TBD      |     TBD     |
-|   Create Back End CRUD Actions    |    H     |     3 hrs      |      TBD      |     TBD     |
-|      Create React Components      |    H     |     4 hrs      |      TBD      |     TBD     |
-|   Create Front End CRUD Actions   |    H     |     6 hrs      |      TBD      |     TBD     |
-|    Develop client side routing    |    H     |     3 hrs      |      TBD      |     TBD     |
-|     CSS styling with flexbox      |    H     |     7 hrs      |      TBD      |     TBD     |
-| Responsive design for media query |    H     |     4 hrs      |      TBD      |     TBD     |
-| Deployment management and testing |    H     |     3 hrs      |      TBD      |     TBD     |
-|               TOTAL               |          |     44 hrs     |      TBD      |     TBD     |
+|               Task                | Priority | Estimated Time |  Time Invested  |  Actual Time  |
+| :-------------------------------: | :------: | :------------: | :-------------: | :-----------: |
+|    Create Ruby file structure     |    H     |     4 hrs      |      4 hrs      |     4 hrs     |
+|         Create Seed data          |    H     |     2 hrs      |      5 hrs      |     5 hrs     |
+|          Migrate models           |    H     |     2 hrs      |      2 hrs      |     2 hrs     |
+|     Code backend server files     |    H     |     5 hrs      |     10 hrs      |    10 hrs     |
+|   Create Back End CRUD Actions    |    H     |     3 hrs      |     10 hrs      |    10 hrs     |
+|      Create React Components      |    H     |     4 hrs      |      6 hrs      |     6 hrs     |
+|   Create Front End CRUD Actions   |    H     |     6 hrs      |      8 hrs      |     8 hrs     |
+|    Develop client side routing    |    H     |     3 hrs      |      8 hrs      |     8 hrs     |
+|     CSS styling with flexbox      |    H     |     7 hrs      |      7 hrs      |     7 hrs     |
+| Responsive design for media query |    H     |     4 hrs      |      8 hrs      |     8 hrs     |
+| Deployment management and testing |    H     |     3 hrs      |      3 hrs      |     3 hrs     |
+|               TOTAL               |          |     44 hrs     |     71 hrs      |     71 hrs    |
 
 <br>
 
@@ -152,10 +163,46 @@ src
 
 ## Code Showcase
 
-TBD
+The Homepage was a little tricky but found great use in React components by sending my search results to the search component to render on the Homepage. 
+
+```
+function Home(currentUser) {
+  const [term, setTerm] = useState({})
+  const [showSearch, setShowSearch] = useState(true)
+
+  const history = useHistory()
+
+  function onChangeInput(value) {
+    console.log(value)
+    setTerm(value)
+    history.push("/dateideas")
+    setShowSearch(false)
+    
+  }
+  return (
+    
+    <div className='background1'>
+      <div className='searchdiv'> 
+        <Search options={options} onChange={onChangeInput} /> 
+       </div>
+      <Switch>
+      <Route path="/dateideas">
+        <Date_Ideas  currentUser={currentUser} term={term} />
+        </Route>
+        
+        </Switch>
+      </div>
+ )
+}
+
+export default Home;
+
+```
 
 <br>
 
 ## Code Issues & Resolutions
 
-TBD
+- Leveraging JWT Auth was a huge challenge in that I wanted the ability to do CRUD only for users. The solution was found in several uses of ternary operators in the Nav and in the Date ideas components
+
+- Passing the search term that is selected by the user as a prop to the date ideas screens took some time to figure out and setting up user as a state but also passing as prop was interesting. 
