@@ -28,7 +28,7 @@ _The **Dates Shouldn't Suck** MVP will have a backend server built with Ruby on 
 <br>
 
 ### Libraries and Dependencies
-
+```
  "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -42,6 +42,7 @@ _The **Dates Shouldn't Suck** MVP will have a backend server built with Ruby on 
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1"
 
+```
 <br>
 
 ### Client (Front End)
